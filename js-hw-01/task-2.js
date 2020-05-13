@@ -8,11 +8,11 @@
 // const ordered = 50;
 
 const total = 100;
-let ordered = 50;
+const ordered = 50;
 
-// ordered = 20;
-// ordered = 80;
-// ordered = 130;
+// const ordered = 20;
+// const ordered = 80;
+// const ordered = 130;
 
 const chekedResulte =
   total > ordered
