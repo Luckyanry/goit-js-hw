@@ -9,9 +9,33 @@
 // Если хочешь, в случае некорректного ввода, показывай alert с текстом 'Было введено не число, попробуйте еще раз',
 // при этом результат prompt плюсовать к общей сумме не нужно, после чего снова пользователю предлагается ввести число в prompt.
 
-let total = 0;
+// let total = 0;
 
-while (true) {
+// while (true) {
+//   let input = prompt('Введите число');
+
+//   if (input === null) {
+//     console.log('Отменено пользователем!');
+//     break;
+//   }
+
+//   input = Number(input);
+//   const checkForNaN = Number.isNaN(input);
+
+//   if (checkForNaN) {
+//     alert('Было введено не число, попробуйте еще раз');
+//     continue;
+//   }
+
+//   total += input;
+// }
+
+// alert(`Общая сумма чисел равна ${total}`);
+
+let total = 0;
+let input;
+
+do {
   let input = prompt('Введите число');
 
   if (input === null) {
@@ -28,6 +52,6 @@ while (true) {
   }
 
   total += input;
-}
+} while (input !== null);
 
 alert(`Общая сумма чисел равна ${total}`);
