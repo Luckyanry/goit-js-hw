@@ -9,7 +9,9 @@ const formatString = function (string) {
   return newString;
 };
 
-// <======== ЕКСПЕРЕМЕНТИ ПО ПОШУКУ ОПТИМАЛЬНОГО РІШЕННЯ ==========>
+/*
+ * ЕКСПЕРЕМЕНТИ ПО ПОШУКУ ОПТИМАЛЬНОГО РІШЕННЯ
+ */
 
 // =============================== 1 ===============================
 // const formatString = function (string) {
@@ -36,6 +38,9 @@ const formatString = function (string) {
 //   return string;
 // };
 
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
 console.log(formatString('Curabitur ligula sapien, tincidunt non.')); // вернется оригинальная строка
 
 console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.')); // вернется форматированная строка
