@@ -13,6 +13,29 @@
 // при этом результат prompt записывать в массив чисел не нужно, после чего снова пользователю предлагается
 // ввести число в prompt.
 
-// let input;
-// const numbers = [];
-// let total = 0;
+let input;
+const numbers = [];
+let total = 0;
+
+do {
+  input = prompt('Введите число');
+
+  if (input === null) {
+    console.log('Отменено пользователем!');
+    break;
+  }
+
+  const value = Number(input);
+  if (Number.isNaN(value)) {
+    alert('Было введено не число, попробуйте еще раз');
+    continue;
+  }
+
+  numbers.push(value);
+  for (const number of numbers) {
+    total += number;
+  }
+  console.log('Array of numbers:', numbers);
+} while (input !== null);
+
+console.log(`Общая сумма чисел равна ${total}`);
