@@ -3,7 +3,21 @@
 // в формате "имя":"кол-во задач".
 
 const findBestEmployee = function (employees) {
-  // твой код
+  const allEmployes = Object.entries(employees);
+  let bestEmployee = '';
+  let bestResult = 0;
+
+  for (const employee of allEmployes) {
+    const name = employee[0];
+    const productivity = employee[1];
+
+    if (bestResult < productivity) {
+      bestResult = productivity;
+      bestEmployee = name;
+    }
+  }
+
+  return bestEmployee;
 };
 
 /*
