@@ -5,7 +5,7 @@
 // и добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
 
 const formatString = function (string) {
-  let newString = string.length > 40 ? string.slice(0, 41) + '...' : string;
+  let newString = string.length > 40 ? string.slice(0, 40) + '...' : string;
   return newString;
 };
 

@@ -19,23 +19,24 @@ let total = 0;
 
 do {
   input = prompt('Введите число');
-
-  if (input === null) {
-    console.log('Отменено пользователем!');
-    break;
-  }
-
   const value = Number(input);
+  // if (input === null) {
+  //   console.log('Отменено пользователем!');
+  //   break;
+  // }
+
   if (Number.isNaN(value)) {
     alert('Было введено не число, попробуйте еще раз');
     continue;
   }
-
   numbers.push(value);
-  for (const number of numbers) {
-    total += number;
-  }
-  console.log('Array of numbers:', numbers);
 } while (input !== null);
+
+console.log('Отменено пользователем!');
+
+for (const number of numbers) {
+  total += number;
+}
+// console.log('Array of numbers:', numbers);
 
 console.log(`Общая сумма чисел равна ${total}`);
