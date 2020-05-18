@@ -19,7 +19,7 @@ const formatString = function (string) {
 //   let stringLength = newString.length;
 
 //   if (stringLength > 40) {
-//     stringLength = newString.splice(41, 1000000, '...');
+//     stringLength = newString.splice(40, 1000000, '...');
 //     stringLength = newString.join('');
 //     // console.log('object :>> ', newStringLength);
 //   } else {
@@ -32,7 +32,7 @@ const formatString = function (string) {
 // const formatString = function (string) {
 //   let newString;
 //   if (string.length > 40) {
-//     newString = string.slice(0, 41) + '...';
+//     newString = string.slice(0, 40 + '...';
 //     return newString;
 //   }
 //   return string;
