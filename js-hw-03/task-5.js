@@ -9,8 +9,14 @@ const products = [
 ];
 
 const getAllPropValues = function (arr, prop) {
-  const AllPropValues = Object.entries(arr, prop);
-  console.log('object :>> ', AllPropValues);
+  const result = [];
+
+  for (const value of arr) {
+    if (prop in value) {
+      result.push(value[prop]);
+    }
+  }
+  return result;
 };
 
 /*
