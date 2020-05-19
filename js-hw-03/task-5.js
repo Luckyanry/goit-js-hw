@@ -9,7 +9,8 @@ const products = [
 ];
 
 const getAllPropValues = function (arr, prop) {
-  // твой код
+  const AllPropValues = Object.entries(arr, prop);
+  console.log('object :>> ', AllPropValues);
 };
 
 /*
