@@ -7,8 +7,8 @@ const countTotalSalary = function (employees) {
   let total = 0;
 
   for (const employee of allEmployes) {
-    const productivity = employee[1];
-    total += productivity;
+    const salary = employee[1];
+    total += salary;
   }
 
   return total;
