@@ -3,7 +3,18 @@
    в консоль значения полей login и email объекта который его вызвал.
 */
 
-console.log(Account.prototype.getInfo); // function
+const Account = function ({ login = 'example', email = 'example@mail.com' }) {
+  this.login = login;
+  this.email = email;
+
+  // this.getInfo = function () {
+  //   console.log(`Login: ${this.login}, Email: ${this.email}`);
+  // };
+};
+
+Account.prototype.getInfo = function () {
+  console.log(`Login: ${this.login}, Email: ${this.email}`);
+};
 
 const mango = new Account({
   login: 'Mangozedog',
