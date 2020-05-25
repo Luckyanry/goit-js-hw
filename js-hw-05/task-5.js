@@ -64,11 +64,9 @@ class Car {
    * не больше чем значение свойства maxSpeed
    */
   accelerate(value) {
-    if (value < this.maxSpeed) {
+    if (this.speed + value <= this.maxSpeed) {
       this.speed += value;
-      // return this.speed;
     }
-    // return false;
   }
 
   /*
@@ -76,10 +74,9 @@ class Car {
    * при условии что результирующая скорость не меньше нуля
    */
   decelerate(value) {
-    if (this.speed > 0) {
+    if (this.speed - value > 0) {
       this.speed -= value;
     }
-    // return this.speed;
   }
 
   /*
@@ -112,10 +109,3 @@ Car.getSpecs(mustang);
 console.log(mustang.price); // 2000
 mustang.price = 4000;
 console.log(mustang.price); // 4000
-
-// ====== TEST =======
-// mustang.turnOff();
-// mustang.accelerate(120);
-// mustang.drive(3);
-
-// Car.getSpecs(mustang);
