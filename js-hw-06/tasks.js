@@ -4,17 +4,16 @@ import users from './script.js';
  *  Задание 1 ==========================================
  *  Получить массив имен всех пользователей (поле name).
  */
-
-const getUserNames = users =>
-  users.map(user => {
-    return user.name;
-  });
+const getUserNames = users => users.map(user => user.name);
 
 console.log(getUserNames(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 
 // ============= Варіант 2 ==============
-// const getUserNames = users => users.map(user => user.name);
+// const getUserNames = users =>
+//   users.map(user => {
+//     return user.name;
+//   });
 // console.log(getUserNames(users));
 
 // ============= Варіант 3 ==============
@@ -106,9 +105,13 @@ console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sher
  *  Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
  */
 
-const getNamesSortedByFriendsCount = users => {
-  // твой код
-};
+const getNamesSortedByFriendsCount = users =>
+  users
+    .sort(
+      (firstUser, secondUser) =>
+        firstUser.friends.length - secondUser.friends.length,
+    )
+    .map(user => user.name);
 
 console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
@@ -119,9 +122,19 @@ console.log(getNamesSortedByFriendsCount(users));
  *  и они должны быть отсортированы в алфавитном порядке.
  */
 
-const getSortedUniqueSkills = users => {
-  // твой код
-};
+const getSortedUniqueSkills = users =>
+  users
+    .reduce((arrayOfUsersSkills, user) => {
+      arrayOfUsersSkills.push(...user.skills);
+      return arrayOfUsersSkills;
+    }, [])
+    .reduce((arrayOfUniquesSkills, skill) => {
+      if (!arrayOfUniquesSkills.includes(skill)) {
+        arrayOfUniquesSkills.push(skill);
+      }
+      return arrayOfUniquesSkills;
+    }, [])
+    .sort();
 
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
