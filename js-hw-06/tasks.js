@@ -138,3 +138,35 @@ const getSortedUniqueSkills = users =>
 
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+
+// ============= Варіант 2 ==============
+// const getSortedUniqueSkills = users =>
+//   users
+//     .flatMap(user => user.skills)
+//     .reduce((uniquesSkills, skill) => {
+//       if (!uniquesSkills.includes(skill)) {
+//         uniquesSkills.push(skill);
+//       }
+//       return uniquesSkills;
+//     }, [])
+//     .sort();
+
+// console.log(getSortedUniqueSkills(users));
+
+// ============= Варіант 3 ==============
+// const getSortedUniqueSkills = users =>
+//   users
+//     .flatMap(user => user.skills)
+//     .filter(
+//       (skill, index, uniquesSkills) => uniquesSkills.indexOf(skill) === index,
+//     )
+//     .sort();
+
+// console.log(getSortedUniqueSkills(users));
+
+// ============= Варіант 4 ==============
+// const getSortedUniqueSkills = users => [
+//   ...new Set(users.flatMap(user => user.skills).sort()),
+// ];
+
+// console.log(getSortedUniqueSkills(users));
