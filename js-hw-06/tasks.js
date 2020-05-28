@@ -124,15 +124,15 @@ console.log(getNamesSortedByFriendsCount(users));
 
 const getSortedUniqueSkills = users =>
   users
-    .reduce((arrayOfUsersSkills, user) => {
-      arrayOfUsersSkills.push(...user.skills);
-      return arrayOfUsersSkills;
+    .reduce((usersSkills, user) => {
+      usersSkills.push(...user.skills);
+      return usersSkills;
     }, [])
-    .reduce((arrayOfUniquesSkills, skill) => {
-      if (!arrayOfUniquesSkills.includes(skill)) {
-        arrayOfUniquesSkills.push(skill);
+    .reduce((uniquesSkills, skill) => {
+      if (!uniquesSkills.includes(skill)) {
+        uniquesSkills.push(skill);
       }
-      return arrayOfUniquesSkills;
+      return uniquesSkills;
     }, [])
     .sort();
 
