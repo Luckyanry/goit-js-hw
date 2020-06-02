@@ -4,13 +4,15 @@
       Если введено подходящее количество, то border инпута становится зеленым, если неправильное - красным.
     
     Для добавления стилей, используй CSS-классы valid и invalid.
-      #validation-input {
-        border: 3px solid #bdbdbd;
-      }
-      #validation-input.valid {
-        border-color: #4caf50;
-      }
-      #validation-input.invalid {
-        border-color: #f44336;
-      }
 */
+
+const input = document.querySelector('#validation-input');
+
+console.log('validationLength :>> ', input.dataset.length);
+
+const validator = () =>
+  input.value.length >= input.dataset.length
+    ? input.classList.remove('invalid') || input.classList.add('valid')
+    : input.classList.add('invalid');
+
+input.addEventListener('blur', validator);
