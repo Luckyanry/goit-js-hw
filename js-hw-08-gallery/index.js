@@ -40,11 +40,11 @@ refs.closeModal.addEventListener('click', clickOnBtn);
 function clickOnImg(event) {
   event.preventDefault();
 
-  const imgRef = event.target;
-  const largeImgURL = event.target.dataset.source;
-  const imgAltRef = event.target.alt;
+  if (event.target.nodeName !== 'IMG') return;
 
-  if (imgRef.nodeName !== 'IMG') return;
+  const imgRef = event.target;
+  const largeImgURL = imgRef.dataset.source;
+  const imgAltRef = imgRef.alt;
 
   openModal();
   setLargeImgSrc(largeImgURL, imgAltRef);
