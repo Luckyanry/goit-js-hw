@@ -43,19 +43,14 @@ function clickOnImg(event) {
   const imgRef = event.target;
   const largeImgURL = event.target.dataset.source;
   const imgAltRef = event.target.alt;
-  console.log('object :>> ', imgAltRef);
 
-  if (imgRef.nodeName !== 'IMG') {
-    return;
-  }
+  if (imgRef.nodeName !== 'IMG') return;
 
   openModal();
   setLargeImgSrc(largeImgURL, imgAltRef);
 }
 
-const openModal = () => {
-  refs.openModal.classList.add('is-open');
-};
+const openModal = () => refs.openModal.classList.add('is-open');
 
 const setLargeImgSrc = (url, alt) => {
   refs.largeImg.src = url;
@@ -63,16 +58,12 @@ const setLargeImgSrc = (url, alt) => {
 };
 
 function clickOnBtn(event) {
-  const imgRef = event.target;
+  const btnRef = event.target;
 
-  if (imgRef.nodeName !== 'BUTTON') {
-    return;
-  }
+  if (btnRef.nodeName !== 'BUTTON') return;
 
   closeModal();
   setLargeImgSrc('', '');
 }
 
-const closeModal = () => {
-  refs.openModal.classList.remove('is-open');
-};
+const closeModal = () => refs.openModal.classList.remove('is-open');
